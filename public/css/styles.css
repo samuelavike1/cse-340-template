@@ -2,5 +2,337 @@
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/******* General Styles ***************/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+a {
+    color: #00008B;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3 {
+    color: #333;
+    margin-top: 0;
+}
+
+ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+/******* Wrapper ***************/
+#wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    background-image: url('/images/site/checkerboard.jpg');
+    background-repeat: repeat-y;
+    background-position: left top, right top;
+    background-size: 25px auto;
+}
+
+/******* Header Styles ***************/
+#top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.siteName a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.siteName a:hover {
+    text-decoration: none;
+}
+
+#tools a {
+    font-size: 0.85rem;
+    color: #333;
+    text-transform: uppercase;
+}
+
+/******* Navigation Styles ***************/
+#main-nav {
+    background-color: #333;
+    padding: 0;
+}
+
+#main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+#main-nav li {
+    flex: 1;
+    text-align: center;
+}
+
+#main-nav a {
+    display: block;
+    color: #fff;
+    padding: 12px 10px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+#main-nav a:hover {
+    background-color: #555;
+    text-decoration: none;
+}
+
+/******* Main Content Styles ***************/
+main {
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #00008B;
+    margin-bottom: 20px;
+}
+
+/******* Hero Section ***************/
+#hero {
+    margin-bottom: 30px;
+}
+
+.hero-content {
+    position: relative;
+}
+
+.hero-content > img {
+    width: 100%;
+    display: block;
+    border: 3px solid #333;
+    border-radius: 5px;
+}
+
+.hero-text {
+    padding: 15px 0;
+}
+
+.hero-title {
+    color: #00CED1;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.hero-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    color: #333;
+}
+
+.hero-features li {
+    padding: 2px 0;
+}
+
+.own-today-btn img {
+    max-width: 120px;
+}
+
+/******* Reviews Section ***************/
+#reviews {
+    margin-bottom: 30px;
+}
+
+#reviews h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.reviews-list {
+    list-style: disc;
+    padding-left: 25px;
+    margin: 0;
+}
+
+.reviews-list li {
+    padding: 5px 0;
+    font-size: 0.95rem;
+}
+
+/******* Upgrades Section ***************/
+#upgrades {
+    margin-bottom: 30px;
+}
+
+#upgrades h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.upgrades-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.upgrades-grid li {
+    text-align: center;
+}
+
+.upgrades-grid a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: #E0FFFF;
+    border: 2px solid #00CED1;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.upgrades-grid a:hover {
+    background-color: #B0E0E6;
+    text-decoration: none;
+}
+
+.upgrades-grid img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.upgrades-grid span {
+    color: #00008B;
+    font-weight: 500;
+}
+
+/******* Footer Styles ***************/
+footer {
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.copyright {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/******* Media Queries for Larger Screens ***************/
+@media screen and (min-width: 768px) {
+    #wrapper {
+        padding: 0 40px;
+    }
+
+    .siteName a {
+        font-size: 2.2rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content {
+        position: relative;
+        display: inline-block;
+    }
+
+    .hero-content > img {
+        max-width: 400px;
+    }
+
+    .hero-text {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 0;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-features li {
+        color: #00CED1;
+    }
+
+    #reviews h2,
+    #upgrades h2 {
+        font-size: 1.4rem;
+    }
+
+    .reviews-list li {
+        font-size: 1rem;
+    }
+
+    .upgrades-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #wrapper {
+        padding: 0 60px;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 20px;
+    }
+
+    main > h1 {
+        grid-column: 1 / -1;
+    }
+
+    #hero {
+        grid-column: 1 / -1;
+    }
+
+    .hero-content > img {
+        max-width: 500px;
+    }
+
+    #reviews {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    #upgrades {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .upgrades-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
