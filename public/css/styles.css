@@ -336,3 +336,135 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/******* Vehicle Detail Styles ***************/
+.vehicle-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.vehicle-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #333;
+    border-radius: 5px;
+}
+
+.vehicle-info {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.vehicle-price {
+    color: #006400;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #00CED1;
+}
+
+.vehicle-info p {
+    margin: 8px 0;
+    font-size: 1rem;
+}
+
+.vehicle-info p strong {
+    color: #333;
+}
+
+.vehicle-description {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+/******* Inventory Display Grid ***************/
+#inv-display {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+#inv-display li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#inv-display li a img {
+    width: 100%;
+    height: auto;
+}
+
+#inv-display .namePrice {
+    padding: 10px;
+}
+
+#inv-display .namePrice hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 0 0 10px 0;
+}
+
+#inv-display .namePrice h2 {
+    font-size: 1rem;
+    margin: 0 0 5px 0;
+}
+
+#inv-display .namePrice span {
+    color: #006400;
+    font-weight: bold;
+}
+
+.notice {
+    padding: 20px;
+    background-color: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+    color: #856404;
+}
+
+/******* Error Page Styles ***************/
+.error-message {
+    padding: 20px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    color: #721c24;
+}
+
+/******* Vehicle Detail Media Queries ***************/
+@media screen and (min-width: 768px) {
+    .vehicle-detail {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .vehicle-image {
+        flex: 1;
+        max-width: 50%;
+    }
+
+    .vehicle-info {
+        flex: 1;
+    }
+
+    #inv-display {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #inv-display {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
