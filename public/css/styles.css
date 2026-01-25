@@ -468,3 +468,158 @@ footer {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/******* Login/Registration Form Styles ***************/
+#loginForm,
+#registerForm {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    background-color: #3d4a5c;
+    border: 3px solid #000;
+    border-radius: 10px;
+}
+
+#loginForm label,
+#registerForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#loginForm input,
+#registerForm input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+#loginForm input:focus,
+#registerForm input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+#loginForm button,
+#registerForm button {
+    display: block;
+    width: auto;
+    margin: 20px auto 0;
+    padding: 10px 40px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#loginForm button:hover,
+#registerForm button:hover {
+    background-color: #ddd;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.register-link a {
+    color: #00008B;
+    text-decoration: underline;
+}
+
+/******* Flash Messages Styles ***************/
+.messages {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.messages li {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.messages .notice {
+    background-color: #fff3cd;
+    border: 1px solid #ffc107;
+    color: #856404;
+}
+
+.messages .error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.messages .success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+/******* Registration Form Specific Styles ***************/
+#registerForm {
+    background-color: #fff;
+    border: 2px solid #000;
+    padding: 20px 30px;
+}
+
+#registerForm label {
+    color: #000;
+    font-weight: normal;
+}
+
+#registerForm input {
+    border: 2px solid #000;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+#registerForm input:focus {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+#registerForm button {
+    background-color: #3369e8;
+    color: #fff;
+    margin-top: 10px;
+    padding: 10px 30px;
+    width: auto;
+}
+
+#registerForm button:hover {
+    background-color: #2851b8;
+}
+
+.password-requirements {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+#loginForm .password-requirements {
+    color: #ccc;
+}
+
+/******* Form Validation Styles ***************/
+input:required:invalid,
+input:focus:invalid {
+    border-color: #dc3545;
+}
+
+input:required:valid {
+    border-color: #28a745;
+}
