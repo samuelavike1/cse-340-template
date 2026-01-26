@@ -616,10 +616,113 @@ footer {
 
 /******* Form Validation Styles ***************/
 input:required:invalid,
-input:focus:invalid {
+input:focus:invalid,
+select:required:invalid,
+textarea:required:invalid {
     border-color: #dc3545;
 }
 
-input:required:valid {
+input:required:valid,
+select:required:valid,
+textarea:required:valid {
     border-color: #28a745;
+}
+
+/******* Management View Styles ***************/
+.management-links {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.management-links li {
+    margin-bottom: 15px;
+}
+
+.management-links a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.management-links a:hover {
+    background-color: #555;
+    text-decoration: none;
+}
+
+/******* Inventory Forms Styles ***************/
+#addClassificationForm,
+#addInventoryForm {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#addClassificationForm label,
+#addInventoryForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 15px;
+}
+
+#addClassificationForm label:first-of-type,
+#addInventoryForm label:first-of-type {
+    margin-top: 0;
+}
+
+#addClassificationForm input,
+#addInventoryForm input,
+#addInventoryForm select,
+#addInventoryForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#addClassificationForm input:focus,
+#addInventoryForm input:focus,
+#addInventoryForm select:focus,
+#addInventoryForm textarea:focus {
+    outline: none;
+    border-color: #00CED1;
+    box-shadow: 0 0 3px rgba(0, 206, 209, 0.5);
+}
+
+#addClassificationForm button,
+#addInventoryForm button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#addClassificationForm button:hover,
+#addInventoryForm button:hover {
+    background-color: #555;
+}
+
+.form-note {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 15px;
 }
