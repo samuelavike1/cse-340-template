@@ -2,6 +2,31 @@
 <%- messages() %>
 <p>Welcome to the vehicle management area.</p>
 <ul class="management-links">
-    <li><a href="/inv/add-classification">Add New Classification</a></li>
-    <li><a href="/inv/add-inventory">Add New Vehicle</a></li>
+  <li><a href="/inv/add-classification">Add New Classification</a></li>
+  <li><a href="/inv/add-inventory">Add New Vehicle</a></li>
 </ul>
+
+<h2>Manage Inventory</h2>
+<p>
+  Use this section to select a classification to see the vehicles in that
+  classification.
+</p>
+
+<div class="inventory-management">
+  <div class="inventory-filters">
+    <label for="classificationList" class="inventory-label">
+      Choose a classification
+    </label>
+    <%- classificationList %>
+    <p class="form-note">
+      Select a type to load vehicles for quick modify or delete.
+    </p>
+  </div>
+
+  <div class="inventory-table-wrapper">
+    <table id="inventoryDisplay"></table>
+    <noscript>JavaScript must be enabled to use this page.</noscript>
+  </div>
+</div>
+
+<script src="../../js/inventory.js"></script>

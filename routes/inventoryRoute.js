@@ -35,6 +35,23 @@ router.post(
     utilities.handleErrors(invController.addInventory)
 )
 
+// Route to build the edit inventory view
+router.get("/edit/:inv_id", utilities.handleErrors(invController.editInventoryView))
+
+// Route to process the update
+router.post(
+    "/update/",
+    invValidate.inventoryRules(),
+    invValidate.checkUpdateData,
+    utilities.handleErrors(invController.updateInventory)
+)
+
+// Route to build the delete confirmation view
+router.get("/delete/:inv_id", utilities.handleErrors(invController.buildDeleteView))
+
+// Route to process the delete
+router.post("/delete", utilities.handleErrors(invController.deleteInventory))
+
 // Route to trigger intentional error (for testing error handling)
 router.get("/trigger-error", utilities.handleErrors(invController.triggerError))
 
