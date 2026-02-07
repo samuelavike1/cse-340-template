@@ -149,13 +149,31 @@ Util.checkJWTToken = (req, res, next) => {
 /* ****************************************
  *  Check Login
  * ************************************ */
- Util.checkLogin = (req, res, next) => {
-  if (res.locals.loggedin) {
-    next()
-  } else {
-    req.flash("notice", "Please log in.")
-    return res.redirect("/account/login")
-  }
- }
+Util.checkLogin = (req, res, next) => {
+    if (res.locals.loggedin) {
+        next()
+    } else {
+        req.flash("notice", "Please log in.")
+        return res.redirect("/account/login")
+    }
+}
+
+/* ****************************************
+ *  Check Account Type
+ * ************************************ */
+Util.checkAccountType = (req, res, next) => {
+    if (res.locals.loggedin) {
+        const account_type = res.locals.accountData.account_type
+        if (account_type === 'Employee' || account_type === 'Admin') {
+            next()
+        } else {
+            req.flash("notice", "You do not have permission to access that resource.")
+            return res.redirect("/account/login")
+        }
+    } else {
+        req.flash("notice", "Please log in.")
+        return res.redirect("/account/login")
+    }
+}
 
 module.exports = Util

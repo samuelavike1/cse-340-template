@@ -55,6 +55,27 @@ validate.checkClassificationData = async (req, res, next) => {
 }
 
 /* ******************************
+ * Check inventory data and return errors to add view
+ * ***************************** */
+validate.checkInventoryData = async (req, res, next) => {
+    const { classification_id } = req.body
+    let errors = validationResult(req)
+    if (!errors.isEmpty()) {
+        let nav = await utilities.getNav()
+        const classificationList = await utilities.buildClassificationList(classification_id)
+        res.render("inventory/add-inventory", {
+            errors,
+            title: "Add New Vehicle",
+            nav,
+            classificationList,
+            ...req.body
+        })
+        return
+    }
+    next()
+}
+
+/* ******************************
  * Check update data and return errors to edit view
  * ***************************** */
 validate.checkUpdateData = async (req, res, next) => {
